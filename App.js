@@ -11,6 +11,8 @@ import AppTextInput from './app/components/AppTextInput'
 import AppPicker from './app/components/AppPicker'
 import LoginScreen from './app/screens/LoginScreen'
 import ListingEditScreen from './app/screens/ListingEditScreen'
+import ListingDetailsScreen from './app/screens/ListingDetailsScreen'
+import MessagesScreen from './app/screens/MessagesScreen'
 
 // import Card from './app/components/Card'
 // import ListingDetailsScreen from './app/screens/ListingDetailsScreen'
