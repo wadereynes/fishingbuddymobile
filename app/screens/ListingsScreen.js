@@ -1,24 +1,25 @@
-import React from 'react'
-import { FlatList, StyleSheet } from 'react-native'
+import React from "react";
+import { FlatList, StyleSheet } from "react-native";
 
-import Screen from '../components/Screen'
-import Card from '../components/Card'
-import colors from '../config/colors'
+import Card from "../components/Card";
+import colors from "../config/colors";
+import Screen from "../components/Screen";
 
 const listings = [
   {
     id: 1,
-    title: 'Red jacket for sale',
+    title: "Red jacket for sale",
     price: 100,
-    image: require('../assets/jacket.jpg'),
+    image: require("../assets/jacket.jpg"),
   },
   {
     id: 2,
-    title: 'Cough in great condition',
-    price: 100,
-    image: require('../assets/couch.jpg'),
+    title: "Couch in great condition",
+    price: 1000,
+    image: require("../assets/couch.jpg"),
   },
-]
+];
+
 function ListingsScreen(props) {
   return (
     <Screen style={styles.screen}>
@@ -28,13 +29,13 @@ function ListingsScreen(props) {
         renderItem={({ item }) => (
           <Card
             title={item.title}
-            subTitle={'P' + item.price}
+            subTitle={"$" + item.price}
             image={item.image}
           />
         )}
       />
     </Screen>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.light,
   },
-})
+});
 
-export default ListingsScreen
+export default ListingsScreen;
