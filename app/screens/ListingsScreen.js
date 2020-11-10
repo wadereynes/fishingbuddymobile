@@ -31,14 +31,19 @@ function ListingsScreen({ navigation }) {
 
         <FlatList
           data={getListingsApi.data}
-          keyExtractor={(listing) => listing.id.toString()}
+          keyExtractor={(listing) => listing._id.toString()}
+          // keyExtractor={(listing) => listing.id.toString()}
           renderItem={({ item }) => (
             <Card
-              title={item.title}
+              title={item.name}
               subTitle={'P' + item.price}
-              imageUrl={item.images[0].url}
-              onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-              thumbnailUrl={item.images[0].thumbnailUrl}
+              imageUrl={item.image}
+              thumbnailUrl={item.image}
+              // title={item.title}
+              // subTitle={'P' + item.price}
+              // imageUrl={item.images[0].url}
+              // onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+              // thumbnailUrl={item.images[0].thumbnailUrl}
             />
           )}
         />

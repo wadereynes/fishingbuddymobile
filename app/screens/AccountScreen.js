@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { StyleSheet, View, FlatList } from 'react-native'
 
 import { ListItem, ListItemSeparator } from '../components/lists'
@@ -6,6 +6,8 @@ import colors from '../config/colors'
 import Icon from '../components/Icon'
 import Screen from '../components/Screen'
 import useAuth from '../auth/useAuth'
+import usersApi from '../api/users'
+import useApi from '../hooks/useApi'
 
 const menuItems = [
   {
@@ -26,12 +28,20 @@ const menuItems = [
 ]
 
 function AccountScreen({ navigation }) {
-  const { user, logOut } = useAuth()
+  const getUsersApi = useApi(usersApi.getusers)
 
+  useEffect(() => {
+    getUsersApi.request(1, 2, 3)
+  }, [])
+  // const { user, logOut } = useAuth()
+  const { user, logOut } = useAuth()
+  // console.log(user)
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
         <ListItem
+          data={getUsersApi.data}
+          keyExtractor={(users) => users._id.toString()}
           title={user.name}
           subTitle={user.email}
           image={require('../assets/mosh.jpg')}

@@ -12,6 +12,7 @@ function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl }) {
         <Image
           style={styles.image}
           tint='light'
+          // preview={{ uri: thumbnailUrl }}
           preview={{ uri: thumbnailUrl }}
           uri={imageUrl}
         />
