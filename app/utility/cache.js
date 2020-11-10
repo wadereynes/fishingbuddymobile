@@ -1,5 +1,7 @@
 import { AsyncStorage } from 'react-native'
-import moment from 'moment'
+// import moment from 'moment'
+import daysjs from 'dayjs'
+import { uniqueId } from 'lodash/uniqueId'
 
 const prefix = 'cache'
 const expiryInMinutes = 5
@@ -17,9 +19,9 @@ const store = async (key, value) => {
 }
 
 const isExpired = (item) => {
-  const now = moment(Date.now())
-  const storedTime = moment(item.timestamp)
-  return now.diff(storedTime, 'minutes') > 5
+  const now = daysjs()
+  const storedTime = daysjs(item.timestamp)
+  return now.diff(storedTime, 'minute') > 5
 }
 
 const get = async (key) => {

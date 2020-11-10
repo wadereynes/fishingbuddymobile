@@ -2,6 +2,7 @@
   "expo": {
     "name": "react-native-shop",
     "slug": "react-native-shop",
+    "privacy": "unlisted",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -19,12 +20,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/splash.png",
+        "foregroundImage": "./app/assets/icon.png",
         "backgroundColor": "#e63c4b"
-      }
+      },
+      "useNextNotificationsApi": true,
+      "package": "com.wade.eshop",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
+    },
+    "notification": {
+      "iosDisplayInForeground": true
     }
   }
 }
